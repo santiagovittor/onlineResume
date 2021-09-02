@@ -17,8 +17,8 @@ dd {
   margin: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -56,7 +56,7 @@ select {
 }
 
 body {
-  background-color: #FCF7F8;
+  background-color: #F7FFF7;
 }
 
 header {
@@ -74,21 +74,22 @@ header {
   grid-gap: 3rem;
   margin: 10vh auto 0 auto;
   height: 100vh;
-  margin-top: -5vh;
+  margin-top: -1vh;
   color: snow;
   font-size: 3vh;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   width: 40%;
 }
 
 .container__top {
   display: grid;
+  opacity: 0.1;
   grid-area: arriba;
   grid-template-areas: "texto imagen";
   border-radius: 1vh;
   width: 100%;
   height: fit-content;
-  background-color: #09A765;
+  background-color: #09a765;
   box-shadow: 0 2px 10px teal;
   font-weight: 400;
   text-shadow: 0 2px 10px black;
@@ -96,13 +97,18 @@ header {
 
 .container__top:hover {
   transform: scale(1.01);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .container__top--texto {
   display: grid;
   grid-area: texto;
   padding: 2rem;
+}
+
+.container__top--texto ul {
+  display: grid;
+  margin-left: -5vh;
 }
 
 .container__top--iconos {
@@ -125,20 +131,21 @@ header {
 
 .container__bottom {
   display: grid;
+  opacity: 0.1;
   grid-area: abajo;
   color: black;
   border-radius: 1vh;
   padding: 1.5vh;
   width: 100%;
   place-content: center;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-weight: bold;
   box-shadow: 0 2px 10px teal;
 }
 
 .container__bottom:hover {
   transform: scale(1.01);
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .container__bottom--buttons {
@@ -166,14 +173,18 @@ a img:hover {
   filter: saturate(2);
 }
 
-@media (max-width: 1098px) {
+@media (max-width: 1312px) {
   .container {
     font-size: 2.5vh;
-    margin-top: 1.5rem;
+    margin-top: -30%;
+    height: inherit;
   }
   .container__top {
     margin-top: 75%;
     grid-template-areas: "imagen" "texto" "texto" "texto";
+  }
+  .container__top--texto ul {
+    margin-left: -3vh;
   }
   .container__top--foto {
     width: 100%;
@@ -187,9 +198,14 @@ a img:hover {
   grid-gap: 3rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 792px) {
   .container {
+    margin-top: -40%;
     width: 25vh;
+  }
+  .container__top--texto ul {
+    margin-left: -3.5vh;
+    font-size: 2vh;
   }
   .container__top {
     margin-top: 75%;
